@@ -9,4 +9,7 @@ def changeLetter(letter, first, second):
 def convert(acc, keys):
   return "".join([changeLetter(letter, *keys) for letter in acc])
 
-print(reduce(convert, cipher, text))
+encrypted = reduce(convert, cipher, text)
+decrypted = reduce(convert, cipher, encrypted)
+
+print(f'Texto Original: {text}\nChaves: {", ".join(cipher)}\n\nCifrado: {encrypted}\nDecifrado: {decrypted}')
